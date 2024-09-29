@@ -1,41 +1,29 @@
-# Global Conversion Factors
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5/9
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5
 
-# Function to convert Fahrenheit to Celsius
 def convert_to_celsius(fahrenheit):
-    try:
-        # Conversion formula: (F - 32) * 5/9
-        celsius = (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
-        return celsius
-    except TypeError:
-        raise ValueError("Invalid temperature. Please enter a numeric value.")
+    celsuis = (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR 
+    return celsuis
 
-# Function to convert Celsius to Fahrenheit
 def convert_to_fahrenheit(celsius):
-    try:
-        # Conversion formula: (C * 9/5) + 32
-        fahrenheit = (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
-        return fahrenheit
-    except TypeError:
-        raise ValueError("Invalid temperature. Please enter a numeric value.")
+    fehrenheit = (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32 
+    return fehrenheit
 
-# User Interaction
-def main():
-    try:
-        temp = float(input("Enter the temperature to convert: "))
-        unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
 
-        if unit == 'F':
-            converted_temp = convert_to_celsius(temp)
-            print(f"{temp}°F is {converted_temp}°C")
-        elif unit == 'C':
-            converted_temp = convert_to_fahrenheit(temp)
-            print(f"{temp}°C is {converted_temp}°F")
-        else:
-            print("Invalid input. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
-    except ValueError:
-        print("Invalid temperature. Please enter a numeric value.")
+try:
+    temperature = int(input("Enter the temperature to convert: "))
+    c_or_f = input("Is this temperature in Celsius or Fahrenheit? (C/F): ")
+    
+    if c_or_f == "C":
+        result = convert_to_fahrenheit(temperature)
+        print(f"{temperature}°C is {result}°F")
 
-if __name__ == "__main__":
-    main()
+    elif c_or_f == "F":
+        result2 = convert_to_celsius(temperature)
+        print(f"{temperature}°F is {result2}°C")
+
+    else:
+        print(f"Invalid temperature. Please enter a numeric value.")
+
+except:
+      print(f"Invalid temperature. Please enter a numeric value.")
