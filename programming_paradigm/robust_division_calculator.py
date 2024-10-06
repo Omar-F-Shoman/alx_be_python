@@ -1,5 +1,3 @@
-
-
 def safe_divide(numerator, denominator):
         try:
             numerator = float(numerator)
@@ -11,8 +9,8 @@ def safe_divide(numerator, denominator):
 
         except ValueError   :
             return "Error: Please enter numeric values only."
-            
- # Example usage
-print(safe_divide(10, 5))  
-print(safe_divide(10, 0))  
-print(safe_divide("ten", 5)) 
+if __name__ == "__main__":
+    # Example usage
+    print(safe_divide(10, 5))  
+    print(safe_divide(10, 0))  
+    print(safe_divide("ten", 5)) 
