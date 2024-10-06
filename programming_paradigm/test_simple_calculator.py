@@ -1,5 +1,5 @@
 import unittest
-from simple_calculator import SimpleCalculator
+from programming_paradigm.simple_calculator import SimpleCalculator
 
 class TestSimpleCalculator(unittest.TestCase):
 
@@ -17,7 +17,7 @@ class TestSimpleCalculator(unittest.TestCase):
     def test_subtraction(self):
         """Test the subtract method."""
         self.assertEqual(self.calc.subtract(3,2), 1)
-        self.assertEqual(self.calc.subtract(1,-1), 0)
+        self.assertEqual(self.calc.subtract(1,-1), 2)
         self.assertEqual(self.calc.subtract(0,0), 0)
         self.assertEqual(self.calc.subtract(2.5,2), .5)
 
